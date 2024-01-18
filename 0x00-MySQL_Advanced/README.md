@@ -99,35 +99,11 @@ $ cat 0-list_databases.sql | mysql -uroot -p my_database
   $
   </code></pre>
 
-                          </div>
-                      </div>
-
                       <h2 class="gap">Tasks</h2>
 
-                      <div data-role="task11633" data-position="1" id="task-num-0">
-                          <div class="panel panel-default task-card " id="task-11633">
-
-                              <span id="user_id" data-id="343517"></span>
-
-                              <div class="panel-heading panel-heading-actions">
                                   <h3 class="panel-title">
                                       0. We are all unique!
                                   </h3>
-
-                                  <div>
-                                      <span class="label label-info">
-                                          mandatory
-                                      </span>
-                                  </div>
-
-                              </div>
-
-                              <div class="panel-body">
-                                  <span id="user_id" data-id="343517"></span>
-
-                                  <!-- Progress vs Score -->
-
-                                  <!-- Task Body -->
                                   <p>Write a SQL script that creates a table <code>users</code> following these
                                       requirements:</p>
 
@@ -174,25 +150,9 @@ $ cat 0-list_databases.sql | mysql -uroot -p my_database
   bob@dylan:~$
   </code></pre>
 
-                              </div>
-
-
-                          </div>
-
-                      </div>
-                      <div data-role="task11634" data-position="2" id="task-num-1">
-                          <div class="panel panel-default task-card " id="task-11634">
-
-                              <span id="user_id" data-id="343517"></span>
-
-                              <div class="panel-heading panel-heading-actions">
                                   <h3 class="panel-title">
                                       1. In and not out
                                   </h3>
-
-
-
-                              </div>
 
                                   <!-- Task Body -->
                                   <p>Write a SQL script that creates a table <code>users</code> following these
@@ -243,29 +203,10 @@ $ cat 0-list_databases.sql | mysql -uroot -p my_database
   bob@dylan:~$
   </code></pre>
 
-                              </div>
-
-
-                          </div>
-
-                      </div>
-                      <div data-role="task11635" data-position="3" id="task-num-2">
-                          <div class="panel panel-default task-card " id="task-11635">
-
-                              <span id="user_id" data-id="343517"></span>
-
-                              <div class="panel-heading panel-heading-actions">
                                   <h3 class="panel-title">
                                       2. Best band ever!
                                   </h3>
 
-                                  <div>
-
-                                  </div>
-
-                              </div>
-
-                              <div class="panel-body">
                                   <span id="user_id" data-id="343517"></span>
 
                                   <!-- Progress vs Score -->
@@ -307,12 +248,6 @@ $ cat 0-list_databases.sql | mysql -uroot -p my_database
   bob@dylan:~$
   </code></pre>
 
-                              </div>
-
-
-                          </div>
-
-                      </div>
 
                                   <p>Write a SQL script that lists all bands with <code>Glam rock</code> as their main
                                       style, ranked by their longevity</p>
@@ -493,27 +428,6 @@ id email name valid_email
 bob@dylan:~$
 </code></pre>
 
-                            </div>
-
-                            <div class="list-group">
-
-
-
-                        </div>
-
-                    </div>
-                    <div data-role="task11639" data-position="7" id="task-num-6">
-                        <div class="panel panel-default task-card " id="task-11639">
-
-                            <span id="user_id" data-id="343517"></span>
-
-
-                            <div class="panel-body">
-                                <span id="user_id" data-id="343517"></span>
-
-                                <!-- Progress vs Score -->
-
-                                <!-- Task Body -->
                                 <p>Write a SQL script that creates a stored procedure <code>AddBonus</code> that adds a
                                     new correction for a student.</p>
 
