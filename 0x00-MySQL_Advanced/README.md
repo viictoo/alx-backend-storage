@@ -20,49 +20,45 @@ FLUSH PRIVILEGES;
 <p>run query on mysql db on docker from localhost:</P>
 <code>mysql -h localhost -P 3306 --protocol=tcp -u root -p hbtn_0d_tvshows</code>
 
-                            <h2>Resources</h2>
+<h2>Resources</h2>
 
-                            <ul>
-                                <li><a href="/rltoken/8w9di_hk19DIMSBEV3EayQ" title="MySQL cheatsheet"
-                                        target="_blank">MySQL cheatsheet</a></li>
-                                <li><a href="/rltoken/2GJbZ48zRPA70o2YhTdH7g"
-                                        title="MySQL Performance: How To Leverage MySQL Database Indexing"
-                                        target="_blank">MySQL Performance: How To Leverage MySQL Database Indexing</a>
-                                </li>
-                                <li><a href="/rltoken/K180X2OCzb6gzPngjn-EIg" title="Stored Procedure"
-                                        target="_blank">Stored Procedure</a></li>
-                                <li><a href="/rltoken/cJ1qA4o-rRm4rWIsqYKSZg" title="Triggers"
-                                        target="_blank">Triggers</a></li>
-                                <li><a href="/rltoken/vHg1z3UAOcWMvOt8xZHeiA" title="Views" target="_blank">Views</a>
-                                </li>
-                                <li><a href="/rltoken/g-c1m6iljScpi4LeqxBRqQ" title="Functions and Operators"
-                                        target="_blank">Functions and Operators</a></li>
-                                <li><a href="/rltoken/gLVwKjQfRL0Jr_nWqAS7VQ" title="Trigger Syntax and Examples"
-                                        target="_blank">Trigger Syntax and Examples</a></li>
-                                <li><a href="/rltoken/X789nJ22H6HVh1uCQPl0lg" title="CREATE TABLE Statement"
-                                        target="_blank">CREATE TABLE Statement</a></li>
-                                <li><a href="/rltoken/mfrWMt1KL3NHXblJykMgZg"
-                                        title="CREATE PROCEDURE and CREATE FUNCTION Statements" target="_blank">CREATE
-                                        PROCEDURE and CREATE FUNCTION Statements</a></li>
-                                <li><a href="/rltoken/oCu8Rg9WfKyF4BhTt8dZGQ" title="CREATE INDEX Statement"
-                                        target="_blank">CREATE INDEX Statement</a></li>
-                                <li><a href="/rltoken/FEZNlZFKZmD1ISnLINkCwQ" title="CREATE VIEW Statement"
-                                        target="_blank">CREATE VIEW Statement</a></li>
-                            </ul>
+<ul>
+    <li><a href="/rltoken/8w9di_hk19DIMSBEV3EayQ" title="MySQL cheatsheet" target="_blank">MySQL cheatsheet</a></li>
+    <li><a href="/rltoken/2GJbZ48zRPA70o2YhTdH7g" title="MySQL Performance: How To Leverage MySQL Database Indexing"
+            target="_blank">MySQL Performance: How To Leverage MySQL Database Indexing</a>
+    </li>
+    <li><a href="/rltoken/K180X2OCzb6gzPngjn-EIg" title="Stored Procedure" target="_blank">Stored Procedure</a></li>
+    <li><a href="/rltoken/cJ1qA4o-rRm4rWIsqYKSZg" title="Triggers" target="_blank">Triggers</a></li>
+    <li><a href="/rltoken/vHg1z3UAOcWMvOt8xZHeiA" title="Views" target="_blank">Views</a>
+    </li>
+    <li><a href="/rltoken/g-c1m6iljScpi4LeqxBRqQ" title="Functions and Operators" target="_blank">Functions and
+            Operators</a></li>
+    <li><a href="/rltoken/gLVwKjQfRL0Jr_nWqAS7VQ" title="Trigger Syntax and Examples" target="_blank">Trigger Syntax and
+            Examples</a></li>
+    <li><a href="/rltoken/X789nJ22H6HVh1uCQPl0lg" title="CREATE TABLE Statement" target="_blank">CREATE TABLE
+            Statement</a></li>
+    <li><a href="/rltoken/mfrWMt1KL3NHXblJykMgZg" title="CREATE PROCEDURE and CREATE FUNCTION Statements"
+            target="_blank">CREATE
+            PROCEDURE and CREATE FUNCTION Statements</a></li>
+    <li><a href="/rltoken/oCu8Rg9WfKyF4BhTt8dZGQ" title="CREATE INDEX Statement" target="_blank">CREATE INDEX
+            Statement</a></li>
+    <li><a href="/rltoken/FEZNlZFKZmD1ISnLINkCwQ" title="CREATE VIEW Statement" target="_blank">CREATE VIEW
+            Statement</a></li>
+</ul>
 
-                            <h2>Learning Objectives</h2>
+<h2>Learning Objectives</h2>
 
-                            <h3>General</h3>
+<h3>General</h3>
 
-                            <ul>
-                                <li>How to create tables with constraints</li>
-                                <li>How to optimize queries by adding indexes</li>
-                                <li>What is and how to implement stored procedures and functions in MySQL</li>
-                                <li>What is and how to implement views in MySQL</li>
-                                <li>What is and how to implement triggers in MySQL</li>
-                            </ul>
+<ul>
+    <li>How to create tables with constraints</li>
+    <li>How to optimize queries by adding indexes</li>
+    <li>What is and how to implement stored procedures and functions in MySQL</li>
+    <li>What is and how to implement views in MySQL</li>
+    <li>What is and how to implement triggers in MySQL</li>
+</ul>
 
-                            <pre><code>$ service mysql start
+<pre><code>$ service mysql start
 
 - MySQL Community Server 5.7.30 is started
   $
@@ -76,11 +72,11 @@ $ cat 0-list_databases.sql | mysql -uroot -p my_database
   $
   </code></pre>
 
-                              <p><strong>In the container, credentials are <code>root/root</code></strong></p>
+<p><strong>In the container, credentials are <code>root/root</code></strong></p>
 
-                              <h3>How to import a SQL dump</h3>
+<h3>How to import a SQL dump</h3>
 
-                              <pre><code>$ echo &quot;CREATE DATABASE hbtn_0d_tvshows;&quot; | mysql -uroot -p
+<pre><code>$ echo &quot;CREATE DATABASE hbtn_0d_tvshows;&quot; | mysql -uroot -p
 
   Enter password:
   $ curl &quot;https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/hbtn_0d_tvshows.sql&quot; -s | mysql -uroot -p hbtn_0d_tvshows
@@ -99,34 +95,34 @@ $ cat 0-list_databases.sql | mysql -uroot -p my_database
   $
   </code></pre>
 
-                      <h2 class="gap">Tasks</h2>
+<h2 class="gap">Tasks</h2>
 
-                                  <h3 class="panel-title">
-                                      0. We are all unique!
-                                  </h3>
-                                  <p>Write a SQL script that creates a table <code>users</code> following these
-                                      requirements:</p>
+<h3 class="panel-title">
+    0. We are all unique!
+</h3>
+<p>Write a SQL script that creates a table <code>users</code> following these
+    requirements:</p>
 
-                                  <ul>
-                                      <li>With these attributes:
+<ul>
+    <li>With these attributes:
 
-                                          <ul>
-                                              <li><code>id</code>, integer, never null, auto increment and primary key
-                                              </li>
-                                              <li><code>email</code>, string (255 characters), never null and unique</li>
-                                              <li><code>name</code>, string (255 characters)</li>
-                                          </ul>
-                                      </li>
-                                      <li>If the table already exists, your script should not fail</li>
-                                      <li>Your script can be executed on any database</li>
-                                  </ul>
+        <ul>
+            <li><code>id</code>, integer, never null, auto increment and primary key
+            </li>
+            <li><code>email</code>, string (255 characters), never null and unique</li>
+            <li><code>name</code>, string (255 characters)</li>
+        </ul>
+    </li>
+    <li>If the table already exists, your script should not fail</li>
+    <li>Your script can be executed on any database</li>
+</ul>
 
-                                  <p><strong>Context:</strong>
-                                      <em>Make an attribute unique directly in the table schema will enforced your
-                                          business rules and avoid bugs in your application</em>
-                                  </p>
+<p><strong>Context:</strong>
+    <em>Make an attribute unique directly in the table schema will enforced your
+        business rules and avoid bugs in your application</em>
+</p>
 
-                                  <pre><code>bob@dylan:~$ echo &quot;SELECT * FROM users;&quot; | mysql -uroot -p holberton
+<pre><code>bob@dylan:~$ echo &quot;SELECT * FROM users;&quot; | mysql -uroot -p holberton
 
   Enter password:
   ERROR 1146 (42S02) at line 1: Table &#39;holberton.users&#39; doesn&#39;t exist
@@ -150,32 +146,32 @@ $ cat 0-list_databases.sql | mysql -uroot -p my_database
   bob@dylan:~$
   </code></pre>
 
-                                  <h3 class="panel-title">
-                                      1. In and not out
-                                  </h3>
+<h3 class="panel-title">
+    1. In and not out
+</h3>
 
-                                  <!-- Task Body -->
-                                  <p>Write a SQL script that creates a table <code>users</code> following these
-                                      requirements:</p>
+<p>Write a SQL script that creates a table <code>users</code> following these
+    requirements:</p>
 
-                                  <ul>
-                                      <li>With these attributes:
+<ul>
+    <li>With these attributes:
 
-                                          <ul>
-                                              <li><code>id</code>, integer, never null, auto increment and primary key
-                                              </li>
-                                              <li><code>email</code>, string (255 characters), never null and unique</li>
-                                              <li><code>name</code>, string (255 characters)</li>
-                                              <li><code>country</code>, enumeration of countries: <code>US</code>,
-                                                  <code>CO</code> and <code>TN</code>, never null (= default will be the
-                                                  first element of the enumeration, here <code>US</code>)</li>
-                                          </ul>
-                                      </li>
-                                      <li>If the table already exists, your script should not fail</li>
-                                      <li>Your script can be executed on any database</li>
-                                  </ul>
+        <ul>
+            <li><code>id</code>, integer, never null, auto increment and primary key
+            </li>
+            <li><code>email</code>, string (255 characters), never null and unique</li>
+            <li><code>name</code>, string (255 characters)</li>
+            <li><code>country</code>, enumeration of countries: <code>US</code>,
+                <code>CO</code> and <code>TN</code>, never null (= default will be the
+                first element of the enumeration, here <code>US</code>)
+            </li>
+        </ul>
+    </li>
+    <li>If the table already exists, your script should not fail</li>
+    <li>Your script can be executed on any database</li>
+</ul>
 
-                                  <pre><code>bob@dylan:~$ echo &quot;SELECT * FROM users;&quot; | mysql -uroot -p holberton
+<pre><code>bob@dylan:~$ echo &quot;SELECT * FROM users;&quot; | mysql -uroot -p holberton
 
   Enter password:
   ERROR 1146 (42S02) at line 1: Table &#39;holberton.users&#39; doesn&#39;t exist
@@ -203,33 +199,30 @@ $ cat 0-list_databases.sql | mysql -uroot -p my_database
   bob@dylan:~$
   </code></pre>
 
-                                  <h3 class="panel-title">
-                                      2. Best band ever!
-                                  </h3>
+<h3 class="panel-title">
+    2. Best band ever!
+</h3>
 
-                                  <span id="user_id" data-id="343517"></span>
+<span id="user_id" data-id="343517"></span>
 
-                                  <!-- Progress vs Score -->
+<p>Write a SQL script that ranks country origins of bands, ordered by the number of
+    (non-unique) fans</p>
 
-                                  <!-- Task Body -->
-                                  <p>Write a SQL script that ranks country origins of bands, ordered by the number of
-                                      (non-unique) fans</p>
+<p><strong>Requirements:</strong></p>
 
-                                  <p><strong>Requirements:</strong></p>
+<ul>
+    <li>Import this table dump: <a href="/rltoken/uPn947gnZLaa0FJrrAFTGQ" title="metal_bands.sql.zip"
+            target="_blank">metal_bands.sql.zip</a></li>
+    <li>Column names must be: <code>origin</code> and <code>nb_fans</code></li>
+    <li>Your script can be executed on any database</li>
+</ul>
 
-                                  <ul>
-                                      <li>Import this table dump: <a href="/rltoken/uPn947gnZLaa0FJrrAFTGQ"
-                                              title="metal_bands.sql.zip" target="_blank">metal_bands.sql.zip</a></li>
-                                      <li>Column names must be: <code>origin</code> and <code>nb_fans</code></li>
-                                      <li>Your script can be executed on any database</li>
-                                  </ul>
+<p><strong>Context:</strong>
+    <em>Calculate/compute something is always power intensive&hellip; better to
+        distribute the load!</em>
+</p>
 
-                                  <p><strong>Context:</strong>
-                                      <em>Calculate/compute something is always power intensive&hellip; better to
-                                          distribute the load!</em>
-                                  </p>
-
-                                  <pre><code>bob@dylan:~$ cat metal_bands.sql | mysql -uroot -p holberton
+<pre><code>bob@dylan:~$ cat metal_bands.sql | mysql -uroot -p holberton
 
   Enter password:
   bob@dylan:~$
@@ -249,23 +242,24 @@ $ cat 0-list_databases.sql | mysql -uroot -p my_database
   </code></pre>
 
 
-                                  <p>Write a SQL script that lists all bands with <code>Glam rock</code> as their main
-                                      style, ranked by their longevity</p>
+<p>Write a SQL script that lists all bands with <code>Glam rock</code> as their main
+    style, ranked by their longevity</p>
 
-                                  <p><strong>Requirements:</strong></p>
+<p><strong>Requirements:</strong></p>
 
-                                  <ul>
-                                      <li>Import this table dump: <a href="/rltoken/uPn947gnZLaa0FJrrAFTGQ"
-                                              title="metal_bands.sql.zip" target="_blank">metal_bands.sql.zip</a></li>
-                                      <li>Column names must be: <code>band_name</code> and <code>lifespan</code> (in years
-                                          <strong>until 2022</strong> - please use <code>2022</code> instead of
-                                          <code>YEAR(CURDATE())</code>)</li>
-                                      <li>You should use attributes <code>formed</code> and <code>split</code> for
-                                          computing the <code>lifespan</code></li>
-                                      <li>Your script can be executed on any database</li>
-                                  </ul>
+<ul>
+    <li>Import this table dump: <a href="/rltoken/uPn947gnZLaa0FJrrAFTGQ" title="metal_bands.sql.zip"
+            target="_blank">metal_bands.sql.zip</a></li>
+    <li>Column names must be: <code>band_name</code> and <code>lifespan</code> (in years
+        <strong>until 2022</strong> - please use <code>2022</code> instead of
+        <code>YEAR(CURDATE())</code>)
+    </li>
+    <li>You should use attributes <code>formed</code> and <code>split</code> for
+        computing the <code>lifespan</code></li>
+    <li>Your script can be executed on any database</li>
+</ul>
 
-                                  <pre><code>bob@dylan:~$ cat metal_bands.sql | mysql -uroot -p holberton
+<pre><code>bob@dylan:~$ cat metal_bands.sql | mysql -uroot -p holberton
 
   Enter password:
   bob@dylan:~$
@@ -282,18 +276,18 @@ $ cat 0-list_databases.sql | mysql -uroot -p my_database
   bob@dylan:~$
   </code></pre>
 
-                                  <p>Write a SQL script that creates a trigger that decreases the quantity of an item
-                                      after adding a new order.</p>
+<p>Write a SQL script that creates a trigger that decreases the quantity of an item
+    after adding a new order.</p>
 
-                                  <p>Quantity in the table <code>items</code> can be negative.</p>
+<p>Quantity in the table <code>items</code> can be negative.</p>
 
-                                  <p><strong>Context:</strong>
-                                      <em>Updating multiple tables for one action from your application can generate
-                                          issue: network disconnection, crash, etc&hellip; to keep your data in a good
-                                          shape, let MySQL do it for you!</em>
-                                  </p>
+<p><strong>Context:</strong>
+    <em>Updating multiple tables for one action from your application can generate
+        issue: network disconnection, crash, etc&hellip; to keep your data in a good
+        shape, let MySQL do it for you!</em>
+</p>
 
-                                  <pre><code>bob@dylan:~$ cat 4-init.sql
+<pre><code>bob@dylan:~$ cat 4-init.sql
 
   -- Initial
   DROP TABLE IF EXISTS items;
@@ -353,19 +347,20 @@ pear 2
 bob@dylan:~$
 </code></pre>
 
-                                <h3 class="panel-title">
-                                    5. Email validation to sent
-                                </h3>
+<h3 class="panel-title">
+    5. Email validation to sent
+</h3>
 
-                                <p>Write a SQL script that creates a trigger that resets the attribute
-                                    <code>valid_email</code> only when the <code>email</code> has been changed.</p>
+<p>Write a SQL script that creates a trigger that resets the attribute
+    <code>valid_email</code> only when the <code>email</code> has been changed.
+</p>
 
-                                <p><strong>Context:</strong>
-                                    <em>Nothing related to MySQL, but perfect for user email validation - distribute the
-                                        logic to the database itself!</em>
-                                </p>
+<p><strong>Context:</strong>
+    <em>Nothing related to MySQL, but perfect for user email validation - distribute the
+        logic to the database itself!</em>
+</p>
 
-                                <pre><code>bob@dylan:~$ cat 5-init.sql
+<pre><code>bob@dylan:~$ cat 5-init.sql
 
 -- Initial
 DROP TABLE IF EXISTS users;
@@ -428,30 +423,31 @@ id email name valid_email
 bob@dylan:~$
 </code></pre>
 
-                                <p>Write a SQL script that creates a stored procedure <code>AddBonus</code> that adds a
-                                    new correction for a student.</p>
+<p>Write a SQL script that creates a stored procedure <code>AddBonus</code> that adds a
+    new correction for a student.</p>
 
-                                <p><strong>Requirements:</strong></p>
+<p><strong>Requirements:</strong></p>
 
-                                <ul>
-                                    <li>Procedure <code>AddBonus</code> is taking 3 inputs (in this order):
+<ul>
+    <li>Procedure <code>AddBonus</code> is taking 3 inputs (in this order):
 
-                                        <ul>
-                                            <li><code>user_id</code>, a <code>users.id</code> value (you can assume
-                                                <code>user_id</code> is linked to an existing <code>users</code>)</li>
-                                            <li><code>project_name</code>, a new or already exists <code>projects</code>
-                                                - if no <code>projects.name</code> found in the table, you should create
-                                                it</li>
-                                            <li><code>score</code>, the score value for the correction</li>
-                                        </ul>
-                                    </li>
-                                </ul>
+        <ul>
+            <li><code>user_id</code>, a <code>users.id</code> value (you can assume
+                <code>user_id</code> is linked to an existing <code>users</code>)
+            </li>
+            <li><code>project_name</code>, a new or already exists <code>projects</code>
+                - if no <code>projects.name</code> found in the table, you should create
+                it</li>
+            <li><code>score</code>, the score value for the correction</li>
+        </ul>
+    </li>
+</ul>
 
-                                <p><strong>Context:</strong>
-                                    <em>Write code in SQL is a nice level up!</em>
-                                </p>
+<p><strong>Context:</strong>
+    <em>Write code in SQL is a nice level up!</em>
+</p>
 
-                                <pre><code>bob@dylan:~$ cat 6-init.sql
+<pre><code>bob@dylan:~$ cat 6-init.sql
 
 -- Initial
 DROP TABLE IF EXISTS corrections;
@@ -558,29 +554,31 @@ user_id project_id score
 bob@dylan:~$
 </code></pre>
 
-                                <h3 class="panel-title">
-                                    7. Average score
-                                </h3>
+<h3 class="panel-title">
+    7. Average score
+</h3>
 
-                                <p>Write a SQL script that creates a stored procedure
-                                    <code>ComputeAverageScoreForUser</code> that computes and store the average score
-                                    for a student.
+<p>Write a SQL script that creates a stored procedure
+    <code>ComputeAverageScoreForUser</code> that computes and store the average score
+    for a student.
 
-                                    Note: An average score can be a decimal</p>
+    Note: An average score can be a decimal
+</p>
 
-                                <p><strong>Requirements:</strong></p>
+<p><strong>Requirements:</strong></p>
 
-                                <ul>
-                                    <li>Procedure <code>ComputeAverageScoreForUser</code> is taking 1 input:
+<ul>
+    <li>Procedure <code>ComputeAverageScoreForUser</code> is taking 1 input:
 
-                                        <ul>
-                                            <li><code>user_id</code>, a <code>users.id</code> value (you can assume
-                                                <code>user_id</code> is linked to an existing <code>users</code>)</li>
-                                        </ul>
-                                    </li>
-                                </ul>
+        <ul>
+            <li><code>user_id</code>, a <code>users.id</code> value (you can assume
+                <code>user_id</code> is linked to an existing <code>users</code>)
+            </li>
+        </ul>
+    </li>
+</ul>
 
-                                <pre><code>bob@dylan:~$ cat 7-init.sql
+<pre><code>bob@dylan:~$ cat 7-init.sql
 
 -- Initial
 DROP TABLE IF EXISTS corrections;
@@ -667,27 +665,28 @@ id name average_score
 bob@dylan:~$
 </code></pre>
 
-                                <h3 class="panel-title">
-                                    8. Optimize simple search
-                                </h3>
+<h3 class="panel-title">
+    8. Optimize simple search
+</h3>
 
-                                <p>Write a SQL script that creates an index <code>idx_name_first</code> on the table
-                                    <code>names</code> and the first letter of <code>name</code>.</p>
+<p>Write a SQL script that creates an index <code>idx_name_first</code> on the table
+    <code>names</code> and the first letter of <code>name</code>.
+</p>
 
-                                <p><strong>Requirements:</strong></p>
+<p><strong>Requirements:</strong></p>
 
-                                <ul>
-                                    <li>Import this table dump: <a href="/rltoken/BluyCCIIfw0NqcjqUiUdEw"
-                                            title="names.sql.zip" target="_blank">names.sql.zip</a></li>
-                                    <li>Only the first letter of <code>name</code> must be indexed</li>
-                                </ul>
+<ul>
+    <li>Import this table dump: <a href="/rltoken/BluyCCIIfw0NqcjqUiUdEw" title="names.sql.zip"
+            target="_blank">names.sql.zip</a></li>
+    <li>Only the first letter of <code>name</code> must be indexed</li>
+</ul>
 
-                                <p><strong>Context:</strong>
-                                    <em>Index is not the solution for any performance issue, but well used, it&rsquo;s
-                                        really powerful!</em>
-                                </p>
+<p><strong>Context:</strong>
+    <em>Index is not the solution for any performance issue, but well used, it&rsquo;s
+        really powerful!</em>
+</p>
 
-                                <pre><code>bob@dylan:~$ cat names.sql | mysql -uroot -p holberton
+<pre><code>bob@dylan:~$ cat names.sql | mysql -uroot -p holberton
 
 Enter password:
 bob@dylan:~$
@@ -730,20 +729,21 @@ bye
 bob@dylan:~$
 </code></pre>
 
-                                <p>Write a SQL script that creates an index <code>idx_name_first_score</code> on the
-                                    table <code>names</code> and the first letter of <code>name</code> and the
-                                    <code>score</code>.</p>
+<p>Write a SQL script that creates an index <code>idx_name_first_score</code> on the
+    table <code>names</code> and the first letter of <code>name</code> and the
+    <code>score</code>.
+</p>
 
-                                <p><strong>Requirements:</strong></p>
+<p><strong>Requirements:</strong></p>
 
-                                <ul>
-                                    <li>Import this table dump: <a href="/rltoken/BluyCCIIfw0NqcjqUiUdEw"
-                                            title="names.sql.zip" target="_blank">names.sql.zip</a></li>
-                                    <li>Only the first letter of <code>name</code> AND <code>score</code> must be
-                                        indexed</li>
-                                </ul>
+<ul>
+    <li>Import this table dump: <a href="/rltoken/BluyCCIIfw0NqcjqUiUdEw" title="names.sql.zip"
+            target="_blank">names.sql.zip</a></li>
+    <li>Only the first letter of <code>name</code> AND <code>score</code> must be
+        indexed</li>
+</ul>
 
-                                <pre><code>bob@dylan:~$ cat names.sql | mysql -uroot -p holberton
+<pre><code>bob@dylan:~$ cat names.sql | mysql -uroot -p holberton
 
 Enter password:
 bob@dylan:~$
@@ -787,29 +787,29 @@ bye
 bob@dylan:~$
 </code></pre>
 
-                                <h3 class="panel-title">
-                                    10. Safe divide
-                                </h3>
+<h3 class="panel-title">
+    10. Safe divide
+</h3>
 
-                                <p>Write a SQL script that creates a function <code>SafeDiv</code> that divides (and
-                                    returns) the first by the second number or returns 0 if the second number is equal
-                                    to 0.</p>
+<p>Write a SQL script that creates a function <code>SafeDiv</code> that divides (and
+    returns) the first by the second number or returns 0 if the second number is equal
+    to 0.</p>
 
-                                <p><strong>Requirements:</strong></p>
+<p><strong>Requirements:</strong></p>
 
-                                <ul>
-                                    <li>You must create a function</li>
-                                    <li>The function <code>SafeDiv</code> takes 2 arguments:
+<ul>
+    <li>You must create a function</li>
+    <li>The function <code>SafeDiv</code> takes 2 arguments:
 
-                                        <ul>
-                                            <li><code>a</code>, INT</li>
-                                            <li><code>b</code>, INT</li>
-                                        </ul>
-                                    </li>
-                                    <li>And returns <code>a / b</code> or 0 if <code>b == 0</code></li>
-                                </ul>
+        <ul>
+            <li><code>a</code>, INT</li>
+            <li><code>b</code>, INT</li>
+        </ul>
+    </li>
+    <li>And returns <code>a / b</code> or 0 if <code>b == 0</code></li>
+</ul>
 
-                                <pre><code>bob@dylan:~$ cat 10-init.sql
+<pre><code>bob@dylan:~$ cat 10-init.sql
 
 -- Initial
 DROP TABLE IF EXISTS numbers;
@@ -854,27 +854,28 @@ SafeDiv(a, b)
 bob@dylan:~$
 </code></pre>
 
-                                <h3 class="panel-title">
-                                    11. No table for a meeting
-                                </h3>
-                                <p>Write a SQL script that creates a view <code>need_meeting</code> that lists all
-                                    students that have a score under 80 (strict) and no <code>last_meeting</code> or
-                                    more than 1 month.</p>
+<h3 class="panel-title">
+    11. No table for a meeting
+</h3>
+<p>Write a SQL script that creates a view <code>need_meeting</code> that lists all
+    students that have a score under 80 (strict) and no <code>last_meeting</code> or
+    more than 1 month.</p>
 
-                                <p><strong>Requirements:</strong></p>
+<p><strong>Requirements:</strong></p>
 
-                                <ul>
-                                    <li>The view <code>need_meeting</code> should return all students name when:
+<ul>
+    <li>The view <code>need_meeting</code> should return all students name when:
 
-                                        <ul>
-                                            <li>They score are under (strict) to 80</li>
-                                            <li><strong>AND</strong> no <code>last_meeting</code> date
-                                                <strong>OR</strong> more than a month</li>
-                                        </ul>
-                                    </li>
-                                </ul>
+        <ul>
+            <li>They score are under (strict) to 80</li>
+            <li><strong>AND</strong> no <code>last_meeting</code> date
+                <strong>OR</strong> more than a month
+            </li>
+        </ul>
+    </li>
+</ul>
 
-                                <pre><code>bob@dylan:~$ cat 11-init.sql
+<pre><code>bob@dylan:~$ cat 11-init.sql
 
 -- Initial
 DROP TABLE IF EXISTS students;
@@ -967,34 +968,36 @@ students CREATE TABLE `students` (\n `name` varchar(255) NOT NULL,\n `score` int
 bob@dylan:~$
 </code></pre>
 
-                                <h3 class="panel-title">
-                                    12. Average weighted score
-                                </h3>
+<h3 class="panel-title">
+    12. Average weighted score
+</h3>
 
-                                <p>Write a SQL script that creates a stored procedure
-                                    <code>ComputeAverageWeightedScoreForUser</code> that computes and store the average
-                                    weighted score for a student.</p>
+<p>Write a SQL script that creates a stored procedure
+    <code>ComputeAverageWeightedScoreForUser</code> that computes and store the average
+    weighted score for a student.
+</p>
 
-                                <p><strong>Requirements:</strong></p>
+<p><strong>Requirements:</strong></p>
 
-                                <ul>
-                                    <li>Procedure <code>ComputeAverageScoreForUser</code> is taking 1 input:
+<ul>
+    <li>Procedure <code>ComputeAverageScoreForUser</code> is taking 1 input:
 
-                                        <ul>
-                                            <li><code>user_id</code>, a <code>users.id</code> value (you can assume
-                                                <code>user_id</code> is linked to an existing <code>users</code>)</li>
-                                        </ul>
-                                    </li>
-                                </ul>
+        <ul>
+            <li><code>user_id</code>, a <code>users.id</code> value (you can assume
+                <code>user_id</code> is linked to an existing <code>users</code>)
+            </li>
+        </ul>
+    </li>
+</ul>
 
-                                <p><strong>Tips</strong>:</p>
+<p><strong>Tips</strong>:</p>
 
-                                <ul>
-                                    <li><a href="/rltoken/QHx92mlF43zF6GTEil-Cyw" title="Calculate-Weighted-Average"
-                                            target="_blank">Calculate-Weighted-Average</a></li>
-                                </ul>
+<ul>
+    <li><a href="/rltoken/QHx92mlF43zF6GTEil-Cyw" title="Calculate-Weighted-Average"
+            target="_blank">Calculate-Weighted-Average</a></li>
+</ul>
 
-                                <pre><code>bob@dylan:~$ cat 100-init.sql
+<pre><code>bob@dylan:~$ cat 100-init.sql
 
 -- Initial
 DROP TABLE IF EXISTS corrections;
@@ -1083,29 +1086,30 @@ id name average_score
 bob@dylan:~$
 </code></pre>
 
-                                <h3 class="panel-title">
-                                    13. Average weighted score for all!
-                                </h3>
+<h3 class="panel-title">
+    13. Average weighted score for all!
+</h3>
 
-                                <p>Write a SQL script that creates a stored procedure
-                                    <code>ComputeAverageWeightedScoreForUsers</code> that computes and store the average
-                                    weighted score for all students.</p>
+<p>Write a SQL script that creates a stored procedure
+    <code>ComputeAverageWeightedScoreForUsers</code> that computes and store the average
+    weighted score for all students.
+</p>
 
-                                <p><strong>Requirements:</strong></p>
+<p><strong>Requirements:</strong></p>
 
-                                <ul>
-                                    <li>Procedure <code>ComputeAverageWeightedScoreForUsers</code> is not taking any
-                                        input.</li>
-                                </ul>
+<ul>
+    <li>Procedure <code>ComputeAverageWeightedScoreForUsers</code> is not taking any
+        input.</li>
+</ul>
 
-                                <p><strong>Tips</strong>:</p>
+<p><strong>Tips</strong>:</p>
 
-                                <ul>
-                                    <li><a href="/rltoken/QHx92mlF43zF6GTEil-Cyw" title="Calculate-Weighted-Average"
-                                            target="_blank">Calculate-Weighted-Average</a></li>
-                                </ul>
+<ul>
+    <li><a href="/rltoken/QHx92mlF43zF6GTEil-Cyw" title="Calculate-Weighted-Average"
+            target="_blank">Calculate-Weighted-Average</a></li>
+</ul>
 
-                                <pre><code>bob@dylan:~$ cat 101-init.sql
+<pre><code>bob@dylan:~$ cat 101-init.sql
 
 -- Initial
 DROP TABLE IF EXISTS corrections;
