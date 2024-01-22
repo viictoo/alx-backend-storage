@@ -1,0 +1,4 @@
+// NOSQL
+
+
+db.school.countDocuments()
