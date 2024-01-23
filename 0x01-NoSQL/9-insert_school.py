@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ python module """
-list_all = __import__('8-all').list_all
 from pymongo import MongoClient
+list_all = __import__('8-all').list_all
 
 
 def insert_school(mongo_collection, **kwargs):
@@ -19,5 +19,5 @@ if __name__ == "__main__":
     schools = list_all(school_collection)
     for school in schools:
         print(
-            "[{}] {} {}".format(school.get('_id'),\
-             school.get('name'), school.get('address', "")))
+            "[{}] {} {}".format(school.get('_id'),
+                                school.get('name'), school.get('address', "")))

@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """ pymongo + NoSQL module """
 
-from pymongo import MongoClient 
+from pymongo import MongoClient
+
 
 def list_all(mongo_collection):
     """list all documents in a collection"""
     return ([] if mongo_collection == [] else
-     list(mongo_collection.find()))
+            list(mongo_collection.find()))
 
 
 if __name__ == "__main__":
@@ -15,4 +16,3 @@ if __name__ == "__main__":
     schools = list_all(school_collection)
     for school in schools:
         print("[{}] {}".format(school.get('_id'), school.get('name')))
-
