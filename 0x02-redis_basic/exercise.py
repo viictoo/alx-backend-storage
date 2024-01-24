@@ -80,8 +80,7 @@ class Cache:
         """
 
         key = str(uuid4())
-        self._redis.mset({key: data})
-        # print(self._redis.get(key))
+        self._redis.set(key, data)
         return key
 
     def get(self, key: str, fn: Optional[Callable] = None) -> Any:
