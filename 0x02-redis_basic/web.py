@@ -20,15 +20,8 @@ def get_page(url: str) -> str:
     Tracks how many times the URL was accessed and stores this
     count in a Redis cache.
     """
-    count = cache.get(f"count:{url}")
-    if count is None:
-        count = 0
-    else:
-        count = int(count)
-
+    cache.set(f"cached:{url}", count)
     resp = requests.get(url)
-
-    count += 1
-    cache.setex(f"count:{url}", 10, count)
-
+    cache.incr(f"count:{url}")
+    cache.setex(f"count:{url}", 10, cache.get(f"cached:{url}"))
     return resp.text
