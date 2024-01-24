@@ -53,28 +53,18 @@ def count_calls(method: Callable) -> Callable:
 def replay(method: Callable) -> None:
     """display the history of calls of a particular function
     """
-    if method is None or not hasattr(method, '__self__'):
-        return
-    cache = getattr(method.__self__, '_redis', None)
-    if not isinstance(cache, redis.Redis):
-        return
-    qname = method.__qualname__
-    in_key = '{}:inputs'.format(qname)
-    out_key = '{}:outputs'.format(qname)
-    fn_count = 0
-    if cache.exists(qname) != 0:
-        fn_count = int(cache.get(qname))
-    print('{} was called {} times:'.format(qname, fn_count))
-    inputs = cache.lrange(in_key, 0, -1)
-    outputs = cache.lrange(out_key, 0, -1)
-    for input, val in zip(inputs, outputs):
-        print('{}(*{}) -> {}'.format(
-            qname,
-            input.decode("utf-8"),
-            val,))
+    key = method.__qualname__
+    data = redis.Redis()
+    hist = data.get(key).decode("utf-8")
+    print("{} was called {} times:".format(key, hist))
+    inputs = data.lrange(key + ":inputs", 0, -1)
+    outputs = data.lrange(key + ":outputs", 0, -1)
+    for k, v in zip(inputs, outputs):
+        print(f"{key}(*{k.decode('utf-8')}) -> {v.decode('utf-8')}")
 
 
 class Cache:
+    """ Class for redis cache """
     def __init__(self):
         """constructor for redis cache"""
         self._redis = redis.Redis()
@@ -95,7 +85,9 @@ class Cache:
         # print(self._redis.get(key))
         return key
 
-    def get(self, key: str, fn: Optional[Callable] = None) -> Any:
+    def get(
+            self, key: str, fn: Optional[Callable] = None
+            ) -> Union[str, bytes, int, float]:
         """converts the data back to the desired format
 
         Args:
