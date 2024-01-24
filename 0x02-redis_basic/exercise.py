@@ -8,16 +8,25 @@ from uuid import uuid4
 
 
 def replay(method: Callable) -> None:
-    """display the history of calls of a particular function
-    """
+    """display the history of calls of a particular function"""
     key = method.__qualname__
     data = redis.Redis()
-    hist = data.get(key).decode("utf-8")
-    print("{} was called {} times:".format(key, hist))
+
+    hist = data.get(key)
+    if hist is None:
+        print(f"No calls found for {key}")
+        return
+
+    hist = int(hist.decode("utf-8"))
+    print(f"{key} was called {hist} times:")
+
     inputs = data.lrange(key + ":inputs", 0, -1)
     outputs = data.lrange(key + ":outputs", 0, -1)
-    for k, v in zip(inputs, outputs):
-        print(f"{key}(*{k.decode('utf-8')}) -> {v.decode('utf-8')}")
+
+    for i, o in zip(inputs, outputs):
+        input_str = i.decode('utf-8') if i else "<no input>"
+        output_str = o.decode('utf-8') if o else "<no output>"
+        print(f"{key}(*{input_str}) -> {output_str}")
 
 
 def call_history(method: Callable) -> Callable:
