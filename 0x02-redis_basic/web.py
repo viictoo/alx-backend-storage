@@ -10,25 +10,29 @@
 """
 import redis
 import requests
+from functools import wraps
 
 count = 0
 cache = redis.Redis()
 
 
-def get_page(url: str) -> str:
-    """Obtains the HTML content of a particular URL and returns it.
-    Tracks how many times the URL was accessed and stores this
-    count in a Redis cache.
-    """
-    cache.set(f"cached:{url}", count)
-    resp = requests.get(url)
-    cache.incr(f"count:{url}")
-    cache.setex(f"count:{url}", 10, cache.get(f"cached:{url}"))
-    return resp.text
+def url_count(method):
+    """Decorator for get_page function"""
+    @wraps(method)
+    def wrapper(url):
+        """Wrapper function"""
+        cache.incr(f"count:{url}")
+        key = cache.get(f"cached:{url}")
+        if key:
+            return key.decode("utf-8")
+        resp = method(url)
+        cache.setex(f"cached:{url}", 10, resp)
+        return resp
+    return wrapper
 
-if __name__ == "__main__":
-    url_ = "http://slowwly.robertomurray.co.uk/delay/1000/url/"
-    url = f"{url_}http://www.google.com"
-    print(get_page(url))
-    print(get_page(url))
-    print(f"Access count for {url}: {count[url]}")
+
+@url_count
+def get_page(url: str) -> str:
+    """obtain the resp content"""
+    results = requests.get(url)
+    return results.text
