@@ -106,10 +106,3 @@ class Cache:
     def get_int(self, key: str) -> int:
         """parametize get with int"""
         return self.get(key, int)
-
-
-cache = Cache()
-cache.store("foo")
-cache.store("bar")
-cache.store(42)
-replay(cache.store)
