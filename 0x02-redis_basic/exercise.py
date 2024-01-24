@@ -17,7 +17,7 @@ def call_history(method: Callable) -> Callable:
     output = method.__qualname__ + ':outputs'
 
     @wraps(method)
-    def wrapper(self, *args, **kwargs):
+    def wrapper(self, *args, **kwargs) -> Any:
         """
         use rpush to append the input arguments.
         use rpush to  Store the output.
@@ -39,7 +39,7 @@ def count_calls(method: Callable) -> Callable:
     # print("qualified name", key) // Cache.store
 
     @wraps(method)
-    def wrapper(self, *args, **kwargs):
+    def wrapper(self, *args, **kwargs) -> Any:
         """
         wrapper fn that increments the count for that key every
         time the method is called and returns the value returned
