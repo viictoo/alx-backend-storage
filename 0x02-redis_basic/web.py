@@ -19,7 +19,6 @@ cache = redis.Redis()
 
 
 def trackUrl(method: Callable) -> Callable:
-    @lru_cache(maxsize=100)
     def wrapper(url):
         # resp = requests.get(url)
         # body = resp.text
