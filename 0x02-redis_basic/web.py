@@ -10,29 +10,31 @@
 """
 import redis
 import requests
-from functools import wraps
+from typing import Callable
+from functools import lru_cache
+
 
 count = 0
 cache = redis.Redis()
 
-
-def url_count(method):
-    """Decorator for get_page function"""
-    @wraps(method)
+def trackUrl(method: Callable) -> Callable:
+    @lru_cache(maxsize=100)
     def wrapper(url):
-        """Wrapper function"""
-        cache.incr(f"count:{url}")
-        key = cache.get(f"cached:{url}")
+        # resp = requests.get(url)
+        # body = resp.text
+        # count[url] = count.get(url, 0) + 1
+        # return body
+        cache.incr(f'count:{url}')
+        key = cache.get(f'key:{url}')
         if key:
-            return key.decode("utf-8")
-        resp = method(url)
-        cache.setex(f"cached:{url}", 10, resp)
-        return resp
+            return key.decode('utf-8')
+        key = method(url)
+        cache.set(f'count:{url}', 0)
+        cache.setex(f'key:{url}', 10, key)
+        return key
     return wrapper
 
 
-@url_count
+@trackUrl
 def get_page(url: str) -> str:
-    """obtain the resp content"""
-    results = requests.get(url)
-    return results.text
+    return requests.get(url).text
