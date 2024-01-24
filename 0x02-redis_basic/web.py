@@ -11,30 +11,26 @@
 import redis
 import requests
 from typing import Callable
-from functools import lru_cache
-
 
 count = 0
 cache = redis.Redis()
 
 
-def trackUrl(method: Callable) -> Callable:
-    def wrapper(url):
-        # resp = requests.get(url)
-        # body = resp.text
-        # count[url] = count.get(url, 0) + 1
-        # return body
-        cache.incr(f'count:{url}')
-        key = cache.get(f'key:{url}')
-        if key:
-            return key.decode('utf-8')
-        key = method(url)
-        cache.set(f'count:{url}', 0)
-        cache.setex(f'key:{url}', 10, key)
-        return key
-    return wrapper
-
-
-@trackUrl
 def get_page(url: str) -> str:
-    return requests.get(url).text
+    """Obtains the HTML content of a particular URL and returns it.
+    Tracks how many times the URL was accessed and stores this
+    count in a Redis cache.
+    """
+    cache.set(f"cached:{url}", count)
+    resp = requests.get(url)
+    cache.incr(f"count:{url}")
+    cache.setex(f"count:{url}", 10, cache.get(f"cached:{url}"))
+    return resp.text
+
+
+# if __name__ == "__main__":
+#     url_ = "http://slowwly.robertomurray.co.uk/delay/1000/url/"
+#     url = f"{url_}http://www.google.com"
+#     print(get_page(url))
+#     print(get_page(url))
+#     print(f"Access count for {url}: {count}")
