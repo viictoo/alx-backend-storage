@@ -1,42 +1,29 @@
 #!/usr/bin/env python3
+""" implements a get_page function (prototype: def get_page(url: str) -> str:)
+    The core of the function is very simple. It uses the requests module to
+    obtain the HTML content of a particular URL and returns it.
 
+    get_page tracks how many times a particular URL was accessed in the key
+    "count:{url}" and cache the respult with an expiration time of 10 seconds.
+
+    Bonus: implement this use case with decorators.
+"""
+import redis
 import requests
-import time
-from functools import lru_cache
+from typing import Callable
+from functools import wraps
+
+count = 0
+cache = redis.Redis()
 
 
-# Dictionary to track URL accesses
-url_access_count = {}
-
-
-# Decorator to cache results and track URL accesses
-def cache_and_track(func):
-    @lru_cache(maxsize=100)
-    def wrapper(url):
-        # Make the request to the URL and fetch the content
-        response = requests.get(url)
-        page_content = response.text
-
-        # Update the URL access count
-        url_access_count[url] = url_access_count.get(url, 0) + 1
-
-        time.sleep(10)  # Simulate slow response
-
-        return page_content
-
-    return wrapper
-
-
-# Function to get the page content (decorated with cache_and_track)
-@cache_and_track
 def get_page(url: str) -> str:
-    return url
-
-
-# Example usage
-if __name__ == "__main__":
-    url_ = "http://slowwly.robertomurray.co.uk/delay/1000/url/"
-    url = f"{url_}http://www.google.com"
-    print(get_page(url))
-    print(get_page(url))
-    print(f"Access count for {url}: {url_access_count[url]}")
+    """Obtains the HTML content of a particular URL and returns it.
+    Tracks how many times the URL was accessed and storesp this
+    count in a Redis cache.
+    """
+    cache.set(f"cached:{url}", count)
+    response = requests.get(url)
+    cache.incr(f"count:{url}")
+    cache.setex(f"count:{url}", 10, cache.get(f"cached:{url}"))
+    return response.text
